@@ -1,0 +1,16 @@
+<ul>
+    <li *ngFor="let field of fields">
+    <a routerLink="/canchas/{{field.idField}}">
+        <img [src]="field.imageUrl">
+            <div class="content">
+                <div class="typeField">
+                    {{field.typeField}}
+                </div>
+                <div class="price">
+                    <span>
+                    {{field.price | currency}}
+                    </span>
+                </div>
+            </div>
+    </a>
+</ul>
