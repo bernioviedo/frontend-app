@@ -1,0 +1,8 @@
+<app-nav></app-nav>
+<div *ngIf="userLoginOn" class="home">
+    <p>Nombre: {{userData?.name}}</p>
+    <p>Apellido: {{userData?.lastName}}</p>
+    <p>Email: {{userData?.email}}</p>
+</div>
+
+<p *ngIf="!userLoginOn" class="home">Iniciá sesión para ver la cuenta</p>
