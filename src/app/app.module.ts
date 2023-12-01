@@ -20,6 +20,13 @@ import { FieldBookingComponent } from './pages/field-booking/field-booking.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { AccountChangesComponent } from './pages/account-changes/account-changes.component';
+import { AccountChangeNameComponent } from './pages/account-change-name/account-change-name.component';
+import { AccountChangePasswordComponent } from './pages/account-change-password/account-change-password.component';
+import { AccountDeleteComponent } from './pages/account-delete/account-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +41,11 @@ import {MatSelectModule} from '@angular/material/select';
     AccountComponent,
     CerrarSesionComponent,
     FieldsComponent,
-    FieldBookingComponent
+    FieldBookingComponent,
+    AccountChangesComponent,
+    AccountChangeNameComponent,
+    AccountChangePasswordComponent,
+    AccountDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +55,10 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     BrowserAnimationsModule, 
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
