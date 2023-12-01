@@ -13,7 +13,7 @@ import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 export class FieldBookingComponent implements OnInit{
   field!: Field;
   
-  constructor(private route:ActivatedRoute, private fieldService:FieldService) {
+  constructor(private route:ActivatedRoute, private _fieldService:FieldService) {
 
     /*activatedRoute.params.subscribe((params) =>{
       if(params.fieldId)
@@ -24,12 +24,16 @@ export class FieldBookingComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>{
-      console.log(params)
-      if(params.idField)
-      this.field = this.fieldService.getFieldById(params.idField)
-    })
-    console.log('parrilla ' + this.field.grill)
+    this.getFields()
+  }
+
+  getFields(){
+    this._fieldService.getFields().subscribe(data =>{
+      console.log(data)
+    }, error =>{
+      console.log(error)
+    }
+    )
   }
 
 }

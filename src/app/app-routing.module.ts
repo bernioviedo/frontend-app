@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'cuenta',component:AccountComponent},
   {path:'cerrar-sesion',component:CerrarSesionComponent},
   {path:'canchas',component:FieldsComponent},
-  {path:'canchas/:idField',component:FieldBookingComponent}
+  {path:'canchas/:_id',component:FieldBookingComponent}
 ];
 
 @NgModule({

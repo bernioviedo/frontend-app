@@ -1,20 +1,25 @@
 import { Injectable } from "@angular/core";
 import { Field } from "../shared/models/field";
 import { sample_fields } from "src/dataFields";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class FieldService {
-
-    constructor() { }
     
-    getAll():Field[]{
-        return sample_fields
-    }
+    url = 'http://localhost:8080/api/fields'
 
-    getFieldById(fieldId:string):Field{
-        return this.getAll().find(field => field.idField == fieldId) ?? new Field();
-    }
+    constructor(private http:HttpClient) { }
+
+        getFields(): Observable<any> {
+            return this.http.get(this.url)
+        }
+
+        getFieldById(fieldId:string):Observable<any>{
+            return this.http.get(this.url)
+        }
+    
 }
