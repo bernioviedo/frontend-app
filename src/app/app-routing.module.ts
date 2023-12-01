@@ -9,6 +9,10 @@ import { AccountComponent } from './pages/account/account.component';
 import { CerrarSesionComponent } from './pages/cerrar-sesion/cerrar-sesion.component';
 import { FieldsComponent } from './pages/fields/fields.component';
 import { FieldBookingComponent } from './pages/field-booking/field-booking.component';
+import { AccountChangesComponent } from './pages/account-changes/account-changes.component';
+import { AccountChangeNameComponent } from './pages/account-change-name/account-change-name.component';
+import { AccountChangePasswordComponent } from './pages/account-change-password/account-change-password.component';
+import { AccountDeleteComponent } from './pages/account-delete/account-delete.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/inicio', pathMatch:'full'},
@@ -20,7 +24,11 @@ const routes: Routes = [
   {path:'cuenta',component:AccountComponent},
   {path:'cerrar-sesion',component:CerrarSesionComponent},
   {path:'canchas',component:FieldsComponent},
-  {path:'canchas/:idField',component:FieldBookingComponent}
+  {path:'canchas/:idField',component:FieldBookingComponent},
+  {path:'cuenta/modificaciones',component:AccountChangesComponent},
+  {path:'cuenta/cambiar-nombre',component:AccountChangeNameComponent},
+  {path:'cuenta/cambiar-password',component:AccountChangePasswordComponent},
+  {path:'cuenta/eliminar',component:AccountDeleteComponent},
 ];
 
 @NgModule({

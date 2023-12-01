@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm">
+    <p class="text-danger">{{registerError}}</p>
+    
+    <div class="mb-3">
+        <label for="exampleInputName1" class="form-label">Nombre</label>
+        <input formControlName="name" type="name" class="form-control" id="exampleInputName1">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="text-danger">
+          <div *ngIf="name.errors?.['required']">
+          El nombre es requerido.
+          </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputLastName1" class="form-label">Apellido</label>
+        <input formControlName="lastName" type="lastName" class="form-control" id="exampleInputLastName1">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+        class="text-danger">
+          <div *ngIf="lastName.errors?.['required']">
+          El apellido es requerido.
+          </div>
+      </div>
+    </div>
+    <button type="submit" (click)="register()" class="btn btn-primary">Guardar cambios</button>
