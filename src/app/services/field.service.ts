@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 })
 
 export class FieldService {
-    
+
     url = 'http://localhost:8080/api/fields'
 
     constructor(private http:HttpClient) { }

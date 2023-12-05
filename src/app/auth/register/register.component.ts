@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/app/services/auth/registerRequest';
 import { RegisterService } from 'src/app/services/auth/register.service';
+import { User } from 'src/app/services/auth/user';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, private router:Router, private registerService:RegisterService) { }
   
   ngOnInit(): void {
+    this.register()
   }
   
   get email(){
@@ -44,21 +46,10 @@ export class RegisterComponent implements OnInit {
   
 
   register(){
-    if(this.registerForm.valid){
-      this.registerService.register(this.registerForm.value as RegisterRequest).subscribe({
-        next:(userData) => {
-          console.log(userData);
-        },
-        error: (errorData) => {
-          console.error(errorData);
-          this.registerError=errorData;
-        },
-        complete: () => {
-          console.info("Registro completo");
-          this.router.navigateByUrl('/registro-exitoso');
-          this.registerForm.reset();
-        }
-      })
+    const user: User = {
+      name: this.registerForm.get('nombre')?.value,
+      lastName: this.registerForm.get('apellido')?.value,
+      email: this.registerForm.get('mail')!.value
     }
   }
 }

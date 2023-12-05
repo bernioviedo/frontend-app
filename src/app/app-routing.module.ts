@@ -24,6 +24,10 @@ const routes: Routes = [
   {path:'cuenta',component:AccountComponent},
   {path:'cerrar-sesion',component:CerrarSesionComponent},
   {path:'canchas',component:FieldsComponent},
+  {path:'cuenta/modificaciones',component:AccountChangesComponent},
+  {path:'cuenta/cambiar-nombre',component:AccountChangeNameComponent},
+  {path:'cuenta/eliminar',component:AccountDeleteComponent},
+  {path:'cuenta/cambiar-password',component:AccountChangePasswordComponent}
 ];
 
 @NgModule({

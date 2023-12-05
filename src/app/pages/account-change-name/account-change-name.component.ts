@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/app/services/auth/registerRequest';
-import { RegisterService } from 'src/app/services/auth/register.service';
+import { ModifyNameService } from 'src/app/services/auth/modify-name.service';
 
 @Component({
   selector: 'app-account-change-name',
@@ -16,7 +16,7 @@ export class AccountChangeNameComponent implements OnInit {
     lastName:['',Validators.required]
   })
 
-  constructor(private formBuilder:FormBuilder, private router:Router, private registerService:RegisterService) { }
+  constructor(private formBuilder:FormBuilder, private router:Router, private modifyNameService:ModifyNameService) { }
   
   ngOnInit(): void {
   }
@@ -34,17 +34,17 @@ export class AccountChangeNameComponent implements OnInit {
 
   register(){
     if(this.registerForm.valid){
-      this.registerService.register(this.registerForm.value as RegisterRequest).subscribe({
-        next:(userData) => {
+      this.modifyNameService.register(this.registerForm.value as RegisterRequest).subscribe({
+        next:(userData: any) => {
           console.log(userData);
         },
-        error: (errorData) => {
+        error: (errorData: string) => {
           console.error(errorData);
           this.registerError=errorData;
         },
         complete: () => {
           console.info("Registro completo");
-          this.router.navigateByUrl('/registro-exitoso');
+          this.router.navigateByUrl('/inicio');
           this.registerForm.reset();
         }
       })
