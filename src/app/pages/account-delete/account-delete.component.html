@@ -1,1 +1,10 @@
-<p>account-delete works!</p>
+<app-nav></app-nav>
+<div class="home">
+<div class="mb-3">
+    <p *ngIf="!userLoginOn">Iniciá sesión para reservar</p>
+    <p *ngIf="userLoginOn">¿Desea eliminar la cuenta?</p>
+</div>
+</div>
+<a *ngIf="userLoginOn" routerLink="/inicio"><a class="boton2"><button type="submit" class="btn btn-primary">Volver al inicio</button></a></a>
+<a *ngIf="userLoginOn" routerLink="/cuenta"><a class="boton2"><button type="submit" class="btn btn-primary">Eliminar</button></a></a>
+

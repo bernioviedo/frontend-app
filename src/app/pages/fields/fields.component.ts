@@ -8,13 +8,20 @@ import { Field } from 'src/app/shared/models/field';
   styleUrls: ['./fields.component.css']
 })
 export class FieldsComponent implements OnInit {
+fields: Field[] = [];
 
-  fields:Field[] = [];
   
-  constructor(private fieldService:FieldService) {
-    this.fields = fieldService.getAll();
+  constructor(private _fieldService:FieldService) {
   }
   ngOnInit(): void {
-    
+    this.getFields()
+  }
+  getFields(){
+    this._fieldService.getFields().subscribe(data =>{
+      console.log(data)
+      this.fields = data
+    }, error =>{
+      console.log(error)
+    })
   }
 }

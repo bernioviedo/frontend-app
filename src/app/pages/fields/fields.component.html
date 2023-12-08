@@ -1,10 +1,10 @@
 <ul>
     <li *ngFor="let field of fields">
-    <a routerLink="/canchas/{{field.idField}}">
+    <a routerLink="/fields{{field.idField}}">
         <img [src]="field.imageUrl">
             <div class="content">
-                <div class="typeField">
-                    {{field.typeField}}
+                <div class="type">
+                    {{field.type}}
                 </div>
                 <div class="price">
                     <span>

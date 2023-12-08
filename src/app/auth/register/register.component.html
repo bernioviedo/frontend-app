@@ -3,7 +3,7 @@
     
     <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Nombre</label>
-        <input formControlName="name" type="name" class="form-control" id="exampleInputName1">
+        <input formControlName="name" type="name" class="form-control" id="exampleInputName1" [(ngModel)]="user.name">
         <div *ngIf="name.invalid && (name.dirty || name.touched)"
         class="text-danger">
           <div *ngIf="name.errors?.['required']">
@@ -14,7 +14,7 @@
 
     <div class="mb-3">
         <label for="exampleInputLastName1" class="form-label">Apellido</label>
-        <input formControlName="lastName" type="lastName" class="form-control" id="exampleInputLastName1">
+        <input formControlName="lastName" type="lastName" class="form-control" id="exampleInputLastName1" [(ngModel)]="user.lastName">
         <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
         class="text-danger">
           <div *ngIf="lastName.errors?.['required']">
@@ -25,7 +25,7 @@
     
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="user.email">
       <div *ngIf="email.invalid && (email.dirty || email.touched)"
       class="text-danger">
         <div *ngIf="email.errors?.['required']">
@@ -37,7 +37,7 @@
       </div>
     </div>
     
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
       <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
 
@@ -47,7 +47,7 @@
             La contraseña es requerida.
             </div>
         </div>
-    </div>
+    </div>-->
 
     <button type="submit" (click)="register()" class="btn btn-primary">Registrarse</button>
 </form>

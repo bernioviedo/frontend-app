@@ -1,10 +1,10 @@
 export class Field{
     idField!:string;
     state!:boolean;
-    typeField!:string;
-    imageUrl!:string;
-    price!:number;
-    name!:string;
+    type?:string | null;
+    imageUrl?:string | null;
+    price?:number;
+    /*name!:string;*/
     grill!:boolean;
     appointment?:string;
 }
