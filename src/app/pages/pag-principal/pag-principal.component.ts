@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { User } from 'src/app/services/auth/user';
 import { RegisterService } from 'src/app/services/auth/register.service';
+
 @Component({
   selector: 'app-pag-principal',
   templateUrl: './pag-principal.component.html',

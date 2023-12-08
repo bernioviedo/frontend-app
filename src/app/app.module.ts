@@ -27,6 +27,7 @@ import { AccountChangesComponent } from './pages/account-changes/account-changes
 import { AccountChangeNameComponent } from './pages/account-change-name/account-change-name.component';
 import { AccountChangePasswordComponent } from './pages/account-change-password/account-change-password.component';
 import { AccountDeleteComponent } from './pages/account-delete/account-delete.component';
+import { AddFieldsComponent } from './pages/add-fields/add-fields.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { AccountDeleteComponent } from './pages/account-delete/account-delete.co
     AccountChangesComponent,
     AccountChangeNameComponent,
     AccountChangePasswordComponent,
-    AccountDeleteComponent
+    AccountDeleteComponent,
+    AddFieldsComponent
   ],
   imports: [
     BrowserModule,
