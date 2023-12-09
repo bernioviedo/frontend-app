@@ -12,6 +12,7 @@ import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class FieldBookingComponent implements OnInit{
   field!: Field;
+  url = 'http://localhost:8080/api/fields'
   
   constructor(private route:ActivatedRoute, private _fieldService:FieldService) {
 
@@ -24,12 +25,13 @@ export class FieldBookingComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.getFields()
+    this.get()
   }
 
-  getFields(){
-    this._fieldService.getFields().subscribe(data =>{
-      console.log(data)
+  get(){
+    this._fieldService.getFields().subscribe(response =>{
+      console.log(response)
+      this.field = response.data
     }, error =>{
       console.log(error)
     }

@@ -1,7 +1,7 @@
 export class Field{
     idField!:string;
     state!:boolean;
-    typeField!:string;
+    type!:string;
     imageUrl!:string;
     price!:number;
     name!:string;

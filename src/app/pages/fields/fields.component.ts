@@ -17,8 +17,9 @@ fields: Field[] = [];
     this.getFields()
   }
   getFields(){
-    this._fieldService.getFields().subscribe(data =>{
-      console.log(data)
+    this._fieldService.getFields().subscribe(response =>{
+      console.log(response)
+      this.fields = response.data
     }, error =>{
       console.log(error)
     })
