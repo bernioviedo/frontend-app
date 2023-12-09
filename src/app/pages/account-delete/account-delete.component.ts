@@ -4,11 +4,11 @@ import { User } from 'src/app/services/auth/user';
 import { RegisterService } from 'src/app/services/auth/register.service';
 
 @Component({
-  selector: 'app-pag-principal',
-  templateUrl: './pag-principal.component.html',
-  styleUrls: ['./pag-principal.component.css']
+  selector: 'app-account-delete',
+  templateUrl: './account-delete.component.html',
+  styleUrls: ['./account-delete.component.css']
 })
-export class PagPrincipalComponent implements OnInit{
+export class AccountDeleteComponent implements OnInit{
   userLoginOn:boolean=false;
   userData?:User;
 

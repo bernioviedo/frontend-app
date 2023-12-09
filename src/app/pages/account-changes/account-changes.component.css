@@ -1,6 +1,9 @@
 .home{
     margin-top: 50px;
     margin-left: 250px;
+    display:block;
+    align-items: center;
+
 }
 button{
     background-color: green;

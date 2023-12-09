@@ -4,6 +4,11 @@ import { FieldService } from 'src/app/services/field.service';
 import { Field } from 'src/app/shared/models/field';
 import { Observable } from 'rxjs';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+
 
 @Component({
   selector: 'app-field-booking',

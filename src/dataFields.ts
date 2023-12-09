@@ -7,7 +7,7 @@ export const sample_fields: Field[] =[
         type: 'Fútbol 5',
         state: false,
         imageUrl:'assets/cancha-f5.jpg',
-        name:'Cancha Fútbol 5',
+        /*name:'Cancha Fútbol 5',*/
         grill:false
     },
     {
@@ -16,7 +16,7 @@ export const sample_fields: Field[] =[
         type: 'Fútbol 7',
         state: false,
         imageUrl:'assets/cancha-f7.jpg',
-        name:'Cancha Fútbol 7',
+        /*name:'Cancha Fútbol 7',*/
         grill:false
     },
     {
@@ -25,7 +25,7 @@ export const sample_fields: Field[] =[
         type: 'Fútbol 6',
         state: false,
         imageUrl:'assets/cancha-f6.jpg',
-        name:'Cancha Fútbol 6',
+        /*name:'Cancha Fútbol 6',*/
         grill:false
     }
 ]

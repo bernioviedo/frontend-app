@@ -1,0 +1,8 @@
+<app-nav></app-nav>
+<div class="home">
+<p routerLink="/cuenta/cambiar-nombre"><a class="boton2"><button type="submit" class="btn btn-primary">Cambiar nombre y apellido</button></a>
+<p routerLink="/cuenta/cambiar-password"><a class="boton2"><button type="submit" class="btn btn-primary">Cambiar contraseña</button></a>
+<p routerLink="/cuenta/eliminar"><a class="boton2"><button type="submit" class="btn btn-primary">Eliminar cuenta</button></a>
+</div>
+
+<p *ngIf="!userLoginOn" class="home">Iniciá sesión para ver la cuenta</p>

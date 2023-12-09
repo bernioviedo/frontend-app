@@ -58,7 +58,11 @@ button{
     font-size: 1.2rem;
     padding: 1rem;
     outline: none;
+<<<<<<< HEAD
     margin-bottom: 4rem;
+=======
+    margin-bottom: 10rem;
+>>>>>>> 00d658accd55f5f3c9b2308d209d0a6eb9a5ab56
 }
 
 button:hover{

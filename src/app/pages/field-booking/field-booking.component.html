@@ -4,7 +4,7 @@
     <div class="details">
         <div class="header">
             <span class="name">
-                {{field.name}}
+                Cancha {{field.type}}
             </span>
         </div>
     </div>
@@ -23,6 +23,14 @@
         </label>
       </div>
     </div>
+
+    <mat-form-field color="accent">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker color="primary"></mat-datepicker>
+    </mat-form-field>
     
     <mat-form-field class="horario">
         <mat-label>Elija un turno</mat-label>
