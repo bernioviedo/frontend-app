@@ -49,12 +49,12 @@ user: any;
   register(){
     const fd = new FormData();
     const user: User = {
-      name: this.registerForm.get('nombre')?.value,
-      lastName: this.registerForm.get('apellido')?.value,
-      email: this.registerForm.get('mail')?.value,
+      name: this.registerForm.get('name')?.value,
+      lastName: this.registerForm.get('lastName')?.value,
+      email: this.registerForm.get('email')?.value,
       /*password:this.registerForm.get('password')?.value*/
     }
-    this.http.post('http://localhost:8080/api/users', fd)
+    this.http.post<User>('http://localhost:8080/api/users', user )
 .subscribe(res => {
   console.log(res);
 })

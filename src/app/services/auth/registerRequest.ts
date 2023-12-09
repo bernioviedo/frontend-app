@@ -1,5 +1,5 @@
 export interface RegisterRequest {
-    username:string,
+    name:string,
     usersurname:string,
     email:string,
     password:string

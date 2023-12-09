@@ -3,7 +3,7 @@
     
     <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Nombre</label>
-        <input formControlName="name" type="name" class="form-control" id="exampleInputName1" [(ngModel)]="user.name">
+        <input formControlName="name" type="name" class="form-control" id="exampleInputName1">
         <div *ngIf="name.invalid && (name.dirty || name.touched)"
         class="text-danger">
           <div *ngIf="name.errors?.['required']">
@@ -14,7 +14,7 @@
 
     <div class="mb-3">
         <label for="exampleInputLastName1" class="form-label">Apellido</label>
-        <input formControlName="lastName" type="lastName" class="form-control" id="exampleInputLastName1" [(ngModel)]="user.lastName">
+        <input formControlName="lastName" type="lastName" class="form-control" id="exampleInputLastName1" >
         <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
         class="text-danger">
           <div *ngIf="lastName.errors?.['required']">
@@ -25,7 +25,7 @@
     
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="user.email">
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
       <div *ngIf="email.invalid && (email.dirty || email.touched)"
       class="text-danger">
         <div *ngIf="email.errors?.['required']">

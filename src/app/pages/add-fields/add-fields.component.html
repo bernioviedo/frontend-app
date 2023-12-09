@@ -1,7 +1,7 @@
 <div class="home">
     <h1>Agregar canchas</h1>
    <form [formGroup]="fieldForm">
-       <!--  <p class="text-danger">{{fieldError}}</p>/--> 
+         <p class="text-danger">{{fieldError}}</p>
         <!--  /--> 
         <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Tipo</label>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="mb-3">
+        <!--<div class="mb-3">
           <label for="exampleInputName1" class="form-label">Imagen URL</label>
           <input formControlName="imageUrl" type="imageUrl" class="form-control" id="exampleInputName1">
           <div *ngIf="imageUrl?.invalid && (imageUrl?.dirty || imageUrl?.touched)"
@@ -34,7 +34,7 @@
             La imagen es requerida.
             </div>
           </div>
-      </div>
-<!-- <h1>Subir imagen</h1>
-<input type="file" (change)="onFileSelected($event)">/--> 
+      </div> -->
+ <h1>Subir imagen</h1>
+<input type="file" (change)="onFileSelected($event)">
 <p><button type="submit" (click)="onUpload()" class="btn btn-primary">Subir</button></p>

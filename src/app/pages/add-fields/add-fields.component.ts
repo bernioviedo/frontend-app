@@ -27,7 +27,7 @@ this.selectedFile = <File>event.target.files[0];
 
 onUpload(){
 const fd = new FormData();
-/*fd.append('image', this.selectedFile, this.selectedFile.name);*/
+fd.append('image', this.selectedFile, this.selectedFile.name);
 const field: Field = {
   type: this.fieldForm.get('type')?.value,
   price: this.fieldForm.get('0')?.value,
