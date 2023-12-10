@@ -33,7 +33,7 @@ const field: Field = {
   price: this.fieldForm.get('0')?.value,
   idField: '',
   state: false,
-  imageUrl: this.fieldForm.get('imageUrl')?.value,
+  imageUrl: '',
   grill: false
 }
 this.http.post('http://localhost:8080/api/fields', fd)
@@ -54,4 +54,4 @@ get price(){
 get imageUrl(){
 return this.fieldForm.controls.imageUrl
 }
-}
+ }

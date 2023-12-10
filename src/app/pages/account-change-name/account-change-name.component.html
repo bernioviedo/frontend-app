@@ -1,5 +1,5 @@
-<form [formGroup]="registerForm">
-    <p class="text-danger">{{registerError}}</p>
+<form [formGroup]="changeForm">
+    <p class="text-danger">{{changeError}}</p>
     
     <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Nombre</label>
@@ -22,4 +22,4 @@
           </div>
       </div>
     </div>
-    <button type="submit" (click)="register()" class="btn btn-primary">Guardar cambios</button>
+    <button type="submit" (click)="change()" class="btn btn-primary">Guardar cambios</button>

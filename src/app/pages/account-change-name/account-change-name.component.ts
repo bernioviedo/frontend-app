@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/app/services/auth/registerRequest';
 import { ModifyNameService } from 'src/app/services/auth/modify-name.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/services/auth/user';
 
 @Component({
   selector: 'app-account-change-name',
@@ -10,44 +12,37 @@ import { ModifyNameService } from 'src/app/services/auth/modify-name.service';
   styleUrls: ['./account-change-name.component.css']
 })
 export class AccountChangeNameComponent implements OnInit {
-  registerError:string="";
-  registerForm=this.formBuilder.group({
+  changeError:string="";
+  changeForm=this.formBuilder.group({
     name:['',Validators.required],
     lastName:['',Validators.required]
   })
 
-  constructor(private formBuilder:FormBuilder, private router:Router, private modifyNameService:ModifyNameService) { }
+  constructor(private formBuilder:FormBuilder, private router:Router, private modifyNameService:ModifyNameService, private http:HttpClient) { }
   
   ngOnInit(): void {
   }
   
 
   get name(){
-    return this.registerForm.controls.name
+    return this.changeForm.controls.name
   }
 
   get lastName(){
-    return this.registerForm.controls.lastName
+    return this.changeForm.controls.lastName
   }
 
   
 
-  register(){
-    if(this.registerForm.valid){
-      this.modifyNameService.register(this.registerForm.value as RegisterRequest).subscribe({
-        next:(userData: any) => {
-          console.log(userData);
-        },
-        error: (errorData: string) => {
-          console.error(errorData);
-          this.registerError=errorData;
-        },
-        complete: () => {
-          console.info("Registro completo");
-          this.router.navigateByUrl('/inicio');
-          this.registerForm.reset();
-        }
-      })
+  change(){
+    const fd = new FormData();
+    const user: User = {
+      name: this.changeForm.get('name')?.value,
+      lastName: this.changeForm.get('lastName')?.value,
     }
-  }
+    this.http.patch<User>('http://localhost:8080/api/users', user )
+.subscribe(res => {
+  console.log(res);
+})
+}
 }

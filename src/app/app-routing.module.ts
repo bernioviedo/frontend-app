@@ -29,7 +29,8 @@ const routes: Routes = [
   {path:'cuenta/cambiar-nombre',component:AccountChangeNameComponent},
   {path:'cuenta/eliminar',component:AccountDeleteComponent},
   {path:'cuenta/cambiar-password',component:AccountChangePasswordComponent},
-  {path:'reg-canchas',component:AddFieldsComponent}
+  {path:'reg-canchas',component:AddFieldsComponent},
+  {path:'canchas/_id',component:FieldBookingComponent}
 ];
 
 @NgModule({

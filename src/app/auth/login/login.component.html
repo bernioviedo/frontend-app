@@ -1,3 +1,15 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div class="mb-3">
+  <label>Email</label>
+  <input type="email" class="form-control" formControlName="email">
+</div>
+<div class="mb-3">
+  <label>Contraseña</label>
+  <input type="password" class="form-control" formControlName="password">
+</div>
+<input type="submit" value="Iniciar sesión" class="btn btn-info">
+</form>
+<!--
 <form [formGroup]="loginForm">
     <p class="text-danger">{{loginError}}</p>
     <div class="mb-3">
@@ -27,4 +39,4 @@
     </div>
     </div>
     <button type="submit" (click)="login()" class="btn btn-primary">Iniciar sesión</button>
-  </form>
+  </form> -->

@@ -2,9 +2,9 @@ form{
     margin: 50px;
 }
 
-button{
+.btn{
     background-color: green;
-    margin-bottom: 100px;
+    color: white;
 }
 .ng-valid:not(form).ng-touched {
     border-left: 5px solid #42A948;

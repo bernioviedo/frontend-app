@@ -17,15 +17,10 @@ fields: Field[] = [];
     this.getFields()
   }
   getFields(){
-<<<<<<< HEAD
+//<<<<<<< HEAD
     this._fieldService.getFields().subscribe(response =>{
       console.log(response)
       this.fields = response.data
-=======
-    this._fieldService.getFields().subscribe(data =>{
-      console.log(data)
-      this.fields = data
->>>>>>> 00d658accd55f5f3c9b2308d209d0a6eb9a5ab56
     }, error =>{
       console.log(error)
     })

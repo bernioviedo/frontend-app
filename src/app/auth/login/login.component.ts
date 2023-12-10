@@ -1,23 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
+import { UserService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginError:string="";
+export class LoginComponent {
+
+  formulario: FormGroup;
+
+  userService = inject(UserService);
+
+ /* loginError:string="";
   loginForm=this.formBuilder.group({
     email:['', [Validators.required,Validators.email]],
     password:['', [Validators.required]],
-  })
-  constructor(private formBuilder:FormBuilder, private router:Router, private loginService:LoginService) { }
+  })*/
+  constructor() {
+    this.formulario = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl()
+    })
+   }
   
-  ngOnInit(): void {
+   async onSubmit() {
+    const response = await this.userService.login(this.formulario.value);
+    console.log(response);
+   }
+ /* ngOnInit(): void {
   }
 
   get email(){
@@ -51,5 +66,5 @@ export class LoginComponent implements OnInit {
       alert("Error al ingresar los datos");
     }
   }
-
+*/
 }

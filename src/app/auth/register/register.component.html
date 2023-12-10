@@ -1,5 +1,23 @@
-<form [formGroup]="registerForm">
-    <p class="text-danger">{{registerError}}</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label>Nombre</label>
+    <input type="text" class="form-control" formControlName="name">
+  </div>
+  <div class="mb-3">
+    <label>Apellido</label>
+    <input type="lastName" class="form-control" formControlName="lastName">
+  </div>
+  <div class="mb-3">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label>Contraseña</label>
+    <input type="password" class="form-control" formControlName="password">
+  </div>
+  <input type="submit" value="Registrarse" class="btn btn-info">
+
+    <!--<p class="text-danger">{{registerError}}</p>
     
     <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Nombre</label>
@@ -37,7 +55,7 @@
       </div>
     </div>
     
-    <!-- <div class="mb-3">
+     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
       <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
 
@@ -47,7 +65,7 @@
             La contraseña es requerida.
             </div>
         </div>
-    </div>-->
+    </div>
 
-    <button type="submit" (click)="register()" class="btn btn-primary">Registrarse</button>
+    <button type="button" (click)="register()" class="btn btn-primary">Registrarse</button> -->
 </form>

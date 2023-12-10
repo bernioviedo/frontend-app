@@ -4,5 +4,5 @@ export interface User {
     lastName?:string | null;
     email?:string | null;
     message?:string;
-    totalreserves?:string;
+    password?:string | null;
 }
